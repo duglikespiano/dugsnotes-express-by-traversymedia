@@ -9,18 +9,18 @@ export let posts = [
 ];
 
 // get all posts
-// router.get('/', getPosts);
+router.get('/', getPosts);
 
-// // get a single post
-// router.get('/:id', getPost);
+// get a single post
+router.get('/:id', getPost);
 
-// // create a new post
-// router.post('/', createPost);
+// create a new post
+router.post('/', createPost);
 
-// // update a new post
-// router.put('/:id', updatePost);
+// update a new post
+router.put('/:id', updatePost);
 
-// // delete a new post
-// router.delete('/:id', deletePost);
+// delete a new post
+router.delete('/:id', deletePost);
 
 export default router;
