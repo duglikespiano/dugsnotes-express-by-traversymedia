@@ -8,7 +8,7 @@ let posts = [
 ];
 
 // get all posts
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
 	const limit = parseInt(req.query.limit);
 
 	if (!isNaN(limit) && limit > 0) {
@@ -18,45 +18,53 @@ router.get('/', (req, res) => {
 });
 
 // get a single post
-router.get('/:id', (req, res) => {
+router.get('/:id', (req, res, next) => {
 	const id = parseInt(req.params.id);
 	const post = posts.find((post) => post.id === id);
 	if (!post) {
-		return res.status(404).json({ message: `A post with the id ${id} was not found` });
+		const err = new Error(`A post with the id ${id} was not found`);
+		err.status = 404;
+		return next(err);
 	}
 	res.status(200).json(post);
 });
 
 // create a new post
-router.post('/', (req, res) => {
+router.post('/', (req, res, next) => {
 	const newPost = {
 		id: posts.length + 1,
 		title: req.body.title,
 	};
 	if (!newPost.title) {
-		return res.status(400).json({ message: 'Please include a title' });
+		const err = new Error('Please include a title');
+		err.status = 400;
+		return next(err);
 	}
 	posts.push(newPost);
 	res.status(201).json(posts);
 });
 
 // update a new post
-router.put('/:id', (req, res) => {
+router.put('/:id', (req, res, next) => {
 	const id = parseInt(req.params.id);
 	const post = posts.find((post) => post.id === id);
 	if (!post) {
-		return res.status(404).json({ message: `A post with the id ${id} was not found` });
+		const err = new Error(`A post with the id ${id} was not found`);
+		err.status = 404;
+		return next(err);
 	}
 	post.title = req.body.title;
 	res.status(200).json(posts);
 });
 
 // delete a new post
-router.delete('/:id', (req, res) => {
+router.delete('/:id', (req, res, next) => {
 	const id = parseInt(req.params.id);
 	const post = posts.find((post) => post.id === id);
 	if (!post) {
-		return res.status(404).json({ message: `A post with the id ${id} was not found` });
+		const err = new Error(`A post with the id ${id} was not found`);
+		err.status = 404;
+		return next(err);
 	}
 	posts = posts.filter((post) => post.id !== id);
 	res.status(200).json(posts);
