@@ -3,6 +3,7 @@ import path from 'path';
 import posts from './routes/posts.js';
 import logger from './middleware/logger.js';
 import errorHandler from './middleware/error.js';
+import notFoundHandler from './middleware/notFound.js';
 
 const app = express();
 const port = process.env.PORT || 1000;
@@ -22,6 +23,9 @@ app.use(express.urlencoded({ extended: false }));
 
 // routes
 app.use('/api/posts', posts);
+
+// 404 handle middleware
+app.use(notFoundHandler);
 
 // error handle middleware
 app.use(errorHandler);
