@@ -1,0 +1,23 @@
+{
+	"name": "dugsnotes-express-by-traversymedia",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/duglikespiano/dugsnotes-express-by-traversymedia.git"
+	},
+	"bugs": {
+		"url": "https://github.com/duglikespiano/dugsnotes-express-by-traversymedia/issues"
+	},
+	"homepage": "https://github.com/duglikespiano/dugsnotes-express-by-traversymedia#readme",
+	"dependencies": {
+		"express": "^5.1.0"
+	},
+	"devDependencies": {}
+}
