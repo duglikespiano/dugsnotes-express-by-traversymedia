@@ -19,7 +19,7 @@
 	},
 	"homepage": "https://github.com/duglikespiano/dugsnotes-express-by-traversymedia#readme",
 	"dependencies": {
+		"colors": "^1.4.0",
 		"express": "^5.1.0"
-	},
-	"devDependencies": {}
+	}
 }
