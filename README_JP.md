@@ -8,7 +8,7 @@
 
 - Project タイトル : dugsnotes_express_by_traversymedia
 - 関連 URL : https://youtu.be/CnH3kAXSrmU?si=xjKfMQou32j8skIJ
-- 期間 : 2025.09.14 - 進行中
+- 期間 : 2025.09.14 - 2025.09.15
 - 人員 : 1 人
 - 技術スタック : </br>
   <img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=node.js&logoColor=white">
