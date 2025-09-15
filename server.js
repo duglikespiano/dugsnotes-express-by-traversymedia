@@ -1,11 +1,15 @@
 const express = require('express');
+const path = require('path');
+
 const app = express();
 const port = 8000;
 
 app.get('/', (req, res) => {
-	// res.send('Hello world!');
-	// res.send('<h1>Hello world!</h1>');
-	// don't need to convert an object into JSON, express handles it
-	res.send({ message: 'hello world!' });
+	res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+app.get('/about', (req, res) => {
+	res.sendFile(path.join(__dirname, 'public', 'about.html'));
+});
+
 app.listen(port, () => console.log(`Server is running on port ${port}`));
